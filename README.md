@@ -21,3 +21,7 @@ Para que el codigo funcione, se debe adaptar a cada computadora, para esto hay q
 #define camino "C:\\Users\\Mi PC\\Documents\\EDA I\\examen\\"
 
 Luego de "ArchivoB" debe poner su camino que indique donde se encuentra el archivo binario y seguido de "camimo" debe poner el camino donde se guardara los archivos .txt y .csv
+
+
+
+El programa fue escrito en Code::Blocks pero no creo que haya problema si se lo intenta leer en otro programa
