@@ -75,7 +75,7 @@ int main (void)
     {
 
             printf("\n\n\t\tBIENVENIDO A EL PROGRAMA DE ORGANIZADOR DE ALCOBENDAS(POA)\n\n\t\tPara iniciar debera ingresar una de las opcion\n\n\n");
-            printf("opcion 1: mostrar en pantalla todos los datos del archivo del año que usted elija(1998-2017)\n\nopcion 2:convertir en archivo .txt todos los datos que tenemos del rango hetario que indique\n\nopcion 3:mostrar en pantalla la diferencia de natalidad de dos anios que elija\n\nopcion 4:convertir en formato .csv todos los datos\n\nopcion 5:limpiar la pantalla\n\nopcion 6:exit\n");
+            printf("opcion 1: mostrar en pantalla todos los datos del archivo del anio que usted elija(1998-2017)\n\nopcion 2:convertir en archivo .txt todos los datos que tenemos del rango hetario que indique\n\nopcion 3:mostrar en pantalla la diferencia de natalidad de dos anios que elija\n\nopcion 4:convertir en formato .csv todos los datos\n\nopcion 5:limpiar la pantalla\n\nopcion 6:exit\n");
             printf("opcion: ");
             fflush(stdin);
             scanf("%hd[^\n]",&opcion);
@@ -90,19 +90,19 @@ int main (void)
                         printf("%s\n",AnioBuscado);
                         indice=0;
 
-                        while(strcmp(AnioBuscado,VComuna[indice].periodo)!=0 && indice<cant)       //este while lo uso para saber si es que existe el año ingresado por el usuario
+                        while(strcmp(AnioBuscado,VComuna[indice].periodo)!=0 && indice<cant)       //este while lo uso para saber si es que existe el a�o ingresado por el usuario
                         {                                                                          //utilizo la variable cant para asegurarme que el ciclo recorra todo el vector de estructuras
                             indice++;
                             aux++;
                         }
-                        printf("%hd",aux);                                                         //con este if lo que compruebo es que el anio ingresado y el año que se encuentra en el indice, si
+                        printf("%hd",aux);                                                         //con este if lo que compruebo es que el anio ingresado y el a�o que se encuentra en el indice, si
                         printf("\tperiodo - descripcion - hombres - mujeres - total\n");           //no es asi entonces sale del case con un mensaje de error
                             if(strcmp(AnioBuscado,VComuna[indice].periodo)==0 && indice<cant)
                             {
                                 imprimir(&VComuna,aux);                                            //una vez se comprueba que los anios coinciden entonces pasamos a imprimir en pantalla con esta funcion
 
                             }else{
-                                printf("valor no encontrado\nComprobar que el año no este mal escrito o contenga un menos\n\n");
+                                printf("valor no encontrado\nComprobar que el a�o no este mal escrito o contenga un menos\n\n");
                             }
                         break;
             case 2:
@@ -170,7 +170,7 @@ int main (void)
                             aux2=0;
                             short DiferenciaNat=0;
 
-                            if( strcmp(anioComp1,VComuna[aux].periodo)==0){                 //comparo que los anios coincidan y convierto en numero el total del 1 año
+                            if( strcmp(anioComp1,VComuna[aux].periodo)==0){                 //comparo que los anios coincidan y convierto en numero el total del 1 a�o
                             sscanf(VComuna[aux].total,"%ld",&TotalAnio1);
                             }else{
                             for(indice=0; strcmp(anioComp1,VComuna[aux].periodo)!=0 && indice<cant; indice++)
@@ -199,7 +199,7 @@ int main (void)
                             printf("total anio 2 %ld",TotalAnio2);
 
                             DiferenciaNat=TotalAnio1-TotalAnio2;                            //una vez encontramos los datos y los convertimos en numeros, pasamos a compararlos y mostrar en pantalla
-                            printf("\n\n\n La diferencia entre los años es de = %hd",DiferenciaNat);
+                            printf("\n\n\n La diferencia entre los a�os es de = %hd",DiferenciaNat);
 
 
                 break;
@@ -231,6 +231,7 @@ int main (void)
 
 
                 break;
+
             case 5:
                 system("cls");
                 break;
@@ -249,5 +250,18 @@ int main (void)
 
 
 
+void imprimir(struct comuna **V,short aux)                          //una vez se comprueba que los anios coinciden entonces pasamos a imprimir en pantalla con esta funcion
+{
+
+    for(short indice=0;indice<21;indice++)
+                {
+                    printf("\t%s  ",((*V)+aux)->periodo);
+                    printf("\t    %s",((*V)+aux)->descripcion);
+                    printf("\t  %s",((*V)+aux)->hombres);
+                    printf("\t  %s",((*V)+aux)->mujeres);
+                    printf("\t  %s",((*V)+aux)->total);
+                    aux++;
+                }
+}
 
 
