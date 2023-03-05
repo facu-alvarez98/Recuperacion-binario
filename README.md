@@ -12,3 +12,12 @@ en total (sumados hombres y mujeres) (diferencia entre la cantidad de nacimiento
 "Año","Intervalo","Hombres","Mujeres","Total"
 
 6) Un ítem para terminar el programa
+
+
+Para que el codigo funcione, se debe adaptar a cada computadora, para esto hay que cambiar el camino en el codigo
+
+#define ArchivoB "C:\\Users\\Mi PC\\Documents\\EDA I\\examen\\alcobendas.b__" 
+
+#define camino "C:\\Users\\Mi PC\\Documents\\EDA I\\examen\\"
+
+Luego de "ArchivoB" debe poner su camino que indique donde se encuentra el archivo binario y seguido de "camimo" debe poner el camino donde se guardara los archivos .txt y .csv
