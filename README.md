@@ -1,4 +1,4 @@
-# Parcial-EDA1
+# Recuperacion binario
 Este fue el parcial de EDA 1, donde se nos pedia:
 
 1) Leer el archivo binario y copiarlo íntegramente a la memoria en un vector generado dinámico 
